@@ -10,6 +10,7 @@ Print address_count.
 """
 
 from func import counter
+from string import ascii_letters
 
 address_count = {}
 
@@ -33,3 +34,47 @@ while count < len(address):
     address_count.update(taddress_count)
 
 print(address_count)
+
+
+#EXERCISE 1E
+
+"""
+
+The frequency of each letter in the Gettysburg Address is already stored
+as address_count. Use this dictionary to find the most common letter in
+the Gettysburg address.
+Store this letter as most_frequent_letter, and print your answer.
+
+"""
+
+alphabet = ascii_letters
+
+alphapos = 0
+
+most_frequent = 0
+
+while alphapos < len(alphabet):
+
+    if alphabet[alphapos] not in address_count.keys():
+
+        alphapos += 1
+
+    else:
+
+        position = alphapos
+
+
+        while position < len(address_count):
+
+                number = address_count[alphabet[alphapos]]
+
+                if number > most_frequent:
+
+                    most_frequent = number
+
+                    alphapos += 1
+
+                else:
+
+                    alphapos += 1
+
