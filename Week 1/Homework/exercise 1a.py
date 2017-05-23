@@ -26,18 +26,17 @@ Count both upper case and lower case letters separately in the dictionary.
 
 sentence = 'Jim quickly realized that the beautiful gowns are expensive'
 
-count_letters = {}
-#write your code here!
-count = 0
+count_letters = {} #empty dictionary
 
-for letter in sentence:
+
+for letter in sentence: #iterates through every letter in sentence
     
-    if letter in alphabet:
+    if letter in alphabet: #checks whether letter in in alphabet
         
-        if letter in count_letters:
+        if letter in count_letters: #if letter is in the alphabet, it further checks whether it is already in the dictionary
             
-            count_letters[letter] += 1
+            count_letters[letter] += 1 #If so, it's count value is incremented by 1
 
         else:
             
-            count_letters[letter] = 1
+            count_letters[letter] = 1 #if the letter is not in the dictionary, its value is set to 1
