@@ -9,7 +9,7 @@ Print address_count.
 
 """
 
-from func import counter
+from func import counter #imports counter function, previously made and saved as func.py
 from string import ascii_letters
 
 address_count = {}
@@ -51,30 +51,42 @@ alphabet = ascii_letters
 
 alphapos = 0
 
+most_frequent_letter = ''
+
 most_frequent = 0
 
 while alphapos < len(alphabet):
 
-    if alphabet[alphapos] not in address_count.keys():
 
-        alphapos += 1
+    if alphabet[alphapos] in address_count.keys():
+
+    
+
+        number = address_count[alphabet[alphapos]]
+
+                
+
+        if number > most_frequent:
+
+            most_frequent = number
+
+            alphapos += 1
+
+        else:
+
+            alphapos += 1
 
     else:
 
-        position = alphapos
+        number = 0
 
+        alphapos += 1
+        
+for letter, count in address_count.items():
 
-        while position < len(address_count):
+    if count == most_frequent:
 
-                number = address_count[alphabet[alphapos]]
+        most_frequent_letter = letter
 
-                if number > most_frequent:
-
-                    most_frequent = number
-
-                    alphapos += 1
-
-                else:
-
-                    alphapos += 1
+print (most_frequent_letter)
 
